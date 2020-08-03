@@ -43,13 +43,18 @@ public class Matches {
                 System.out.print("На столе осталось " + count + " спичек \n - Ход игрока. Введите количество списек: ");
                 int x = Integer.parseInt(obj.readLine());
 
-                if (x < 1 || x > 3) {
-
+              if (x < 1 || x > 3) {
+                    rep : while (true) {
                     System.out.print("Введите число от 1 до 3: ");
                     int y = Integer.parseInt(obj.readLine());
+                    if (y < 1 || y > 3) {
+                    continue rep;
+                    }
+
                     count = count - y;
                     player--;
-
+                    break;
+}
                 } else {
 
                     count = count - x;
